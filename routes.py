@@ -12,7 +12,7 @@ async def run_security_scan(request: SecurityScanRequest):
         response = requests.get(target, timeout=5)
         headers = response.headers
         
-        # Daftar header dengan saran perbaikan
+        
         security_config = {
             'Content-Security-Policy': "Mencegah serangan XSS.",
             'X-Frame-Options': "Mencegah Clickjacking.",
@@ -30,7 +30,7 @@ async def run_security_scan(request: SecurityScanRequest):
                 results[header] = "Missing"
                 missing.append(description)
         
-        # Hitung skor (25 per header yang ada)
+        
         score = sum(1 for v in results.values() if v == "Pass") * 25
         
         return {
