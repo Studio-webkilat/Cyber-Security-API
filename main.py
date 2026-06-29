@@ -45,7 +45,7 @@ async def scan_website(request: SecurityScanRequest, x_api_key: str = Header(...
     data = perform_scan(str(request.target_url))
     score = data.get("score", 0)
     
-    # Logika visual status
+    
     if score <= 25: data["status_visual"] = "🔴 (Sangat Rentan)"
     elif score <= 70: data["status_visual"] = "🟠 (Perlu Perbaikan)"
     elif score <= 85: data["status_visual"] = "🟢 (Aman)"
