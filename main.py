@@ -5,7 +5,7 @@ from database import SessionLocal, ScanLog, Base, engine
 from models import SecurityScanRequest
 from scanner import perform_scan
 
-# Inisialisasi Database
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Cyber Security API")
@@ -53,7 +53,7 @@ async def scan_website(request: SecurityScanRequest, x_api_key: str = Header(...
         
     data["history_threat"] = "Terdeteksi 2 upaya serangan DDoS di bulan Juni 2026 pada target ini"
     
-    # Simpan ke DB
+    
     log = ScanLog(target=str(request.target_url), score=score)
     db.add(log)
     db.commit()
