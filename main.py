@@ -8,7 +8,7 @@ from scanner import perform_scan
 # Inisialisasi Database
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Cyber Academy Security API")
+app = FastAPI(title="Cyber Security API")
 
 def get_db():
     db = SessionLocal()
