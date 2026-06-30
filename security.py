@@ -1,4 +1,4 @@
-# Tambahin import ini di atas
+from fastapi import Request 
 from sqlalchemy.orm import Session
 from database import SessionLocal 
 from models import HackingLog
