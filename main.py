@@ -23,6 +23,8 @@ body{background-color:var(--dark-bg)!important;font-family:'Courier New',monospa
 .swagger-ui .prism-code .token.number{color:var(--neon-cyan)!important;}
 </style>"""
 
+Base.metadata.create_all(bind=engine)
+
 app = FastAPI(docs_url=None, redoc_url=None) # Disable default docs
 
 
